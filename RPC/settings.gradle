@@ -1,0 +1,5 @@
+rootProject.name = 'lab_2-4_repo'
+include 'Server'
+include 'Client'
+include 'Common'
+

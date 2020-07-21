@@ -1,0 +1,23 @@
+<label>Serial number:
+  <input #serialNumber/>
+  <br/>
+</label>
+
+<label>Name:
+  <input #name/>
+  <br/>
+</label>
+
+<label>Year:
+  <input #year/>
+  <br/>
+</label>
+
+<label>Rating:
+  <input #rating/>
+  <br/>
+</label>
+
+<button (click)="saveMovie(serialNumber.value,name.value, year.value,rating.value)">
+  Save
+</button>

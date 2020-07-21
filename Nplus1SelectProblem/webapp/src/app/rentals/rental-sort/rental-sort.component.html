@@ -1,0 +1,38 @@
+<label>Page size:
+  <input #size/>
+  <br/>
+</label>
+
+<label>Page number:
+  <input #number/>
+  <br/>
+</label>
+
+<label>field:
+  <input #field/>
+  <br/>
+</label>
+
+<label>direction:
+  <input #direction/>
+  <br/>
+</label>
+
+
+
+
+<button (click)="sortRentals(size.value,number.value,field.value,direction.value)">
+  Apply sort
+</button>
+
+<li *ngFor="let rental of rentals">
+  {{rental.rentalSerialNumber}}
+</li>
+
+<button (click)="sortRentalsAngular()">
+  Apply sort from angular
+</button>
+
+<ul>
+  <li *ngFor="let rental of allRentals| rentalSort : 'desc' : 'name'">{{rental.rentalSerialNumber}}</li>
+</ul>

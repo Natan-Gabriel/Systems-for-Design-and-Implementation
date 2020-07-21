@@ -1,0 +1,39 @@
+<label>Page size:
+  <input #size/>
+  <br/>
+</label>
+
+<label>Page number:
+  <input #number/>
+  <br/>
+</label>
+
+<label>filter:
+  <input #filter/>
+  <br/>
+</label>
+
+
+<button (click)="filterClients(filter.value,size.value,number.value)">
+  Apply filter<br/>
+</button>
+
+<li *ngFor="let client of clients">
+  {{client.name}}
+</li>
+
+
+<br/>
+<label>searchTerm for Angular:
+  <input #searchTerm/>
+  <br/>
+</label>
+
+<button (click)="getAllClients()">
+  filterAngular
+</button>
+
+
+<li *ngFor="let client of allClients | clientFilter : 'name' : searchTerm.value">{{client.name}}</li>
+
+

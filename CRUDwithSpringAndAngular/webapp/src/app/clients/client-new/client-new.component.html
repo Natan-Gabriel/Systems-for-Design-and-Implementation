@@ -1,0 +1,69 @@
+<!--
+<input id="name" name="name" class="form-control"
+       required minlength="4" appForbiddenName="bob"
+       [(ngModel)]="client.name" #name="ngModel" >
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+     class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+
+</div>
+-->
+<label>Serial number:
+  <input #serialNumber ng-model="serialNumber" required/>
+  <!--<span ng-show="name.$error.required" class="help-block">Name is required</span>-->
+
+  <br/>
+</label>
+<!--
+<input id="name" class="form-control"
+       formControlName="name" required >
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+     class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Percent is required.
+  </div>
+
+  <div *ngIf="name.errors.max || name.errors.min">
+    Number must be between 0 and 1
+  </div>
+
+</div>
+-->
+
+<label>Name:
+  <input #name>
+  <!--<input [(ngModel)]="name" name="name" required minlength="1"  #name #name="ngModel">
+  <div *ngIf="name.invalid && (name.dirty || name.touched)"
+       class="alert alert-danger">
+
+    <div *ngIf="name.errors.required">
+      serial number is required.
+    </div>
+
+  </div>-->
+  <br/>
+</label>
+
+<label>Age:
+  <input #age/>
+  <br/>
+</label>
+
+<span ng-show="!somefield.length">Please enter something!</span>
+
+<button id="a" (click)="saveClient(serialNumber.value,name.value, age.value)" >
+
+  Save
+</button>

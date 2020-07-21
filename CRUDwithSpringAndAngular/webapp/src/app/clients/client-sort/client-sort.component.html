@@ -1,0 +1,38 @@
+<label>Page size:
+  <input #size/>
+  <br/>
+</label>
+
+<label>Page number:
+  <input #number/>
+  <br/>
+</label>
+
+<label>field:
+  <input #field/>
+  <br/>
+</label>
+
+<label>direction:
+  <input #direction/>
+  <br/>
+</label>
+
+
+
+
+<button (click)="sortClients(size.value,number.value,field.value,direction.value)">
+  Apply sort
+</button>
+
+<li *ngFor="let client of clients">
+  {{client.name}}
+</li>
+
+<button (click)="sortClientsAngular()">
+  Apply sort from angular
+</button>
+
+<ul>
+  <li *ngFor="let client of allClients| clientSort : 'desc' : 'name'">{{client.name}}</li>
+</ul>

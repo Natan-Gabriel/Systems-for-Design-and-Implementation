@@ -1,0 +1,36 @@
+
+<div *ngIf="client">
+  <h2>Student {{client.name}} details</h2>
+  <div>
+    <label>Serial number: </label> {{client.serialNumber}}
+    <input [(ngModel)]="client.serialNumber" placeholder="serialNumber" name="serialNumber" required minlength="1" #serialNumber="ngModel">
+    <div *ngIf="serialNumber.invalid && (serialNumber.dirty || serialNumber.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="serialNumber.errors.required">
+        serial number is required.
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <label>Name: </label> {{client.name}}
+    <input [(ngModel)]="client.name" placeholder="name" name="name" required minlength="1" #name="ngModel">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <label>Group number: </label> {{client.age}}
+    <input [(ngModel)]="client.age" placeholder="age" name="age" required minlength="1" #age="ngModel">
+
+
+  </div>
+  <button (click)="goBack()" >Back</button>
+  <button (click)="save()">Save</button>
+</div>

@@ -1,0 +1,38 @@
+<label>Page size:
+  <input #size/>
+  <br/>
+</label>
+
+<label>Page number:
+  <input #number/>
+  <br/>
+</label>
+
+<label>field:
+  <input #field/>
+  <br/>
+</label>
+
+<label>direction:
+  <input #direction/>
+  <br/>
+</label>
+
+
+
+
+<button (click)="sortMovies(size.value,number.value,field.value,direction.value)">
+  Apply sort
+</button>
+
+<li *ngFor="let movie of movies">
+  {{movie.name}}
+</li>
+
+<button (click)="sortMoviesAngular()">
+  Apply sort from angular
+</button>
+
+<ul>
+  <li *ngFor="let movie of allMovies| movieSort : 'desc' : 'name'">{{movie.name}}</li>
+</ul>

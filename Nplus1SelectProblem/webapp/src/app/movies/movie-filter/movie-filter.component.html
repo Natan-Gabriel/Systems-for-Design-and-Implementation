@@ -1,0 +1,37 @@
+<label>Page size:
+  <input #size/>
+  <br/>
+</label>
+
+<label>Page number:
+  <input #number/>
+  <br/>
+</label>
+
+<label>filter:
+  <input #filter/>
+  <br/>
+</label>
+
+
+<button (click)="filterMovies(filter.value,size.value,number.value)">
+  Apply filter<br/>
+</button>
+
+<li *ngFor="let movie of movies">
+  {{movie.name}}
+</li>
+
+
+<br/>
+<label>searchTerm for Angular:
+  <input #searchTerm/>
+  <br/>
+</label>
+
+<button (click)="getAllMovies()">
+  filterAngular
+</button>
+
+
+<li *ngFor="let movie of allMovies | movieFilter : 'name' : searchTerm.value">{{movie.name}}</li>

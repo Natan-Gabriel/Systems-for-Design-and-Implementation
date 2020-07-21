@@ -1,0 +1,25 @@
+<label>Page size:
+  <input #size/>
+  <br/>
+</label>
+
+<label>Page number:
+  <input #number/>
+  <br/>
+</label>
+
+<label>filter:
+  <input #filter/>
+  <br/>
+</label>
+
+
+
+<app-client-filter></app-client-filter>
+<button (click)="getClientsPaginated(size.value,number.value)">
+  Paginate clients
+</button>
+
+<li *ngFor="let client of clients">
+  {{client.name}}
+</li>

@@ -1,0 +1,23 @@
+<label>Rental serial number:
+  <input #rentalSerialNumber/>
+  <br/>
+</label>
+
+<label>Client ID:
+  <input #clientID/>
+  <br/>
+</label>
+
+<label>Movie ID:
+  <input #movieID/>
+  <br/>
+</label>
+
+<label>Returned:
+  <input #returned/>
+  <br/>
+</label>
+
+<button (click)="saveRental(clientID.value, movieID.value,rentalSerialNumber.value,returned.value)">
+  Save
+</button>
